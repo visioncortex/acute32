@@ -1,0 +1,23 @@
+{
+  "name": "symcode-webapp",
+  "collaborators": [
+    "Chris Tsang <tyt2y7@gmail.com>",
+    "Sanford Pun <punsanford@gmail.com>"
+  ],
+  "description": "Symbolic Barcode - Web App",
+  "version": "0.1.0",
+  "license": "MIT OR Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visioncortex/symcode/"
+  },
+  "files": [
+    "symcode_webapp_bg.wasm",
+    "symcode_webapp.js",
+    "symcode_webapp.d.ts"
+  ],
+  "module": "symcode_webapp.js",
+  "homepage": "http://www.visioncortex.org/",
+  "types": "symcode_webapp.d.ts",
+  "sideEffects": false
+}

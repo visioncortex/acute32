@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symcode Writer</title>
+<script>
+// https://bugs.webkit.org/show_bug.cgi?id=190800
+if (!'BigUint64Array' in window) {
+    window.BigUint64Array = Float64Array;
+}
+</script>
+<style>
+#frame {
+    width: 400px;
+    height: 400px;
+}
+#loader {
+    display: none;
+}
+</style>
+</head>
+<body>
+
+<input type="text" id="input" placeholder="Write a bit string here...">
+<a id="generate" href="#">Generate</a>
+<p id="msg"></p>
+<canvas id="frame"></canvas>
+<canvas id="loader"></canvas>
+<script src="./bootstrap.js"></script>
+<script>
+const generate = document.getElementById('generate');
+const input = document.getElementById('input');
+const frame = document.getElementById('frame');
+const ctx = frame.getContext('2d');
+const msg = document.getElementById('msg');
+
+generate.onclick = function () {
+    const payload = input.value;
+    if (!payload) {
+        return;
+    }
+    try {
+        window.Acute32.generate_symcode_to_canvas('frame', payload);
+        ctx.filter = 'blur(1px)';
+        ctx.drawImage(frame, 0, 0);
+    } catch (e) {
+        msg.innerText = e.toString();
+    }
+}
+</script>
+</body>
+</html>

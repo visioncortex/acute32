@@ -1,0 +1,16 @@
+{
+  "name": "symcode-app",
+  "version": "1.0.0",
+  "description": "Demo webapp for SymCode",
+  "private": true,
+  "scripts": {
+    "build": "rm ../dist/*.wasm && webpack"
+  },
+  "dependencies": {
+    "symcode": "file:../pkg",
+    "webpack": "^4.41.5"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
+  }
+}
