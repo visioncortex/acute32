@@ -21,4 +21,4 @@
 ![Sample SymCode](dist/SymCode.png)
 
 ## Alphabet
-![Sample SymCode](dist/alphabet.png)
+<img src="dist/alphabet.png" width="600">
