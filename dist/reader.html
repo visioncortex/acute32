@@ -62,11 +62,10 @@ input.onchange = function () {
 
 function scan() {
     const startTime = new Date();
-    const code = window.Acute32.scan_from_canvas_id('frame');
+    const code = window.Acute32.scan_from_canvas('frame');
     const time = (new Date() - startTime);
     console.log('Scanning finishes in ' + time + ' ms.');
     window.Acute32.generate_symcode_to_canvas('frame', code);
-    frame.style.display = 'block';
     ctx.filter = 'blur(1px)';
     ctx.drawImage(frame, 0, 0);
     return code;

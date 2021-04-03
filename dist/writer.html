@@ -31,21 +31,19 @@ if (!('BigUint64Array' in window)) {
 <script>
 const generate = document.getElementById('generate');
 const input = document.getElementById('input');
-const frame = document.getElementById('frame');
-const ctx = frame.getContext('2d');
 const msg = document.getElementById('msg');
 
-generate.onclick = function () {
-    const payload = input.value;
-    if (!payload) {
-        return;
-    }
-    try {
-        window.Acute32.generate_symcode_to_canvas('frame', payload);
-        ctx.filter = 'blur(1px)';
-        ctx.drawImage(frame, 0, 0);
-    } catch (e) {
-        msg.innerText = e.toString();
+window.Acute32onload = function () {
+    generate.onclick = function () {
+        const payload = input.value;
+        if (!payload) {
+            return;
+        }
+        try {
+            window.Acute32.generate_symcode('frame', payload);
+        } catch (e) {
+            msg.innerText = e.toString();
+        }
     }
 }
 </script>

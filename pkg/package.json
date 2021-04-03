@@ -14,7 +14,9 @@
   "files": [
     "symcode_webapp_bg.wasm",
     "symcode_webapp.js",
-    "symcode_webapp.d.ts"
+    "symcode_webapp.d.ts",
+    "LICENSE-APACHE",
+    "LICENSE-MIT"
   ],
   "module": "symcode_webapp.js",
   "homepage": "http://www.visioncortex.org/",
